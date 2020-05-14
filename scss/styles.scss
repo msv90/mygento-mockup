@@ -1,0 +1,289 @@
+/* IMPORTS */
+@import "reset";
+@import "variables";
+/* /IMPORTS */
+
+/* COMMON */
+body{
+    font-family: "Open Sans", Roboto, Arial, sans-serif;
+    background: #fff;
+    font-size: 16px;
+    color: $textColorMain;
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section{
+    padding-top: 250px;
+    height: 100vh;
+}
+
+.section-title{
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 300;
+    color: $titleColorMain;
+}
+
+.section__scroll{
+    display: block;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    text-decoration: none;
+
+}
+
+.section__scroll-text{
+    color: $scrollColorSecond;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* /COMMON */
+
+/* NAVIGATION */
+.nav{
+    background: transparent;
+    color: $menuColorMain;
+    padding: 25px;
+    border-bottom: 2px solid $menuColorMain;
+    position: fixed;
+    left: 60px;
+    right: 60px;
+    top: 0;
+    transition: all linear .3s;
+}
+
+.nav-scrolled{
+    color: $menuColorScrolled;
+    background: #fff;
+    border-bottom: 2px solid $menuColorScrolled;
+}
+
+.nav__menu-mobile{
+    display: none;
+}
+
+.nav__list{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.nav__item{
+    margin: 0 35px;
+}
+
+.nav__link{
+    color: inherit;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 18px;
+}
+/* /NAVIGATION */
+
+/* BANNER */
+.banner{
+    background-image: url('../img/banner_bg.png');
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.banner__scroll{
+    text-align: center;
+    margin-bottom: 50px;
+    text-decoration: none;
+}
+
+.banner__scroll-text{
+    color: $scrollColorMain;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* /BANNER */
+
+/* ABOUT */
+.about__container{
+    display: flex;
+    flex-flow: row;
+}
+
+.about__img{
+    flex: 1;
+}
+
+.about__img img{
+    width: 100%;
+}
+
+.about__title{
+    margin-bottom: 70px;
+}
+
+.about__content{
+    flex: 1;
+    margin-left: 50px;
+    padding-top: 70px;
+}
+
+.about__text{
+    margin-bottom: 60px;
+    line-height: 32px;
+}
+
+.about__text p:not(:last-child){
+    margin-bottom: 40px;
+}
+
+.about__footer{
+    font-size: 24px;
+}
+/* /ABOUT */
+
+/* TABLET */
+@media screen and (max-width: 1023px) {
+    .section{
+        padding-top: 73px;
+        height: auto;
+    }
+
+    .section__scroll{
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .nav-scrolled{
+        left: 0;
+        right: 0;
+    }
+
+    .nav__menu-mobile{
+        display: none;
+    }
+
+    .nav__item{
+        margin: 0 25px;
+    }
+
+    .banner{
+        background-position: center;
+    }
+
+    .banner__scroll{
+        display: none;
+    }
+
+    .about__container{
+        flex-flow: column;
+    }
+
+    .about__content{
+        margin: 0;
+        padding: 0 50px;
+    }
+
+    .about__title{
+        margin-bottom: 40px;
+    }
+
+    .about__content{
+        flex: 1;
+        margin-left: 0;
+        padding-top: 40px;
+    }
+
+    .about__text{
+        margin-bottom: 30px;
+        line-height: 32px;
+    }
+
+    .about__text p:not(:last-child){
+        margin-bottom: 20px;
+    }
+}
+/* /TABLET */
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+    .section{
+        padding: 0;
+    }
+
+    .section__scroll{
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    .nav{
+        left: 0;
+        right: 0;
+        border-bottom: 0;
+        padding: 30px;
+        height: 80px;
+        overflow: hidden;
+    }
+
+    .nav-scrolled{
+        border-bottom: 1px solid $menuColorScrolled;
+    }
+
+    .nav_active{
+        height: auto;
+    }
+
+    .nav__menu-mobile{
+        display: block;
+        cursor: pointer;
+        padding-bottom: 20px;
+        width: 91px;
+        height: 18px;
+        background-image: $menuMobileIconImageMain;
+        background-repeat: no-repeat;
+        padding: 20px;
+    }
+
+    .nav-scrolled .nav__menu-mobile{
+        background-image: $menuMobileIconImageSecond;
+    }
+
+    .nav__list{
+        opacity: 0;
+        flex-flow: column;
+        transition: all linear 1.2s;
+    }
+
+    .nav_active .nav__list{
+        opacity: 1;
+    }
+
+    .nav__item{
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    .nav__link{
+        font-size: 20px;
+    }
+
+    .about__container{
+        flex-flow: column;
+    }
+
+    .about__content{
+        padding: 30px 30px 0 30px;
+    }
+
+    .about__title{
+        margin-bottom: 20px;
+    }
+}
+/* /MOBILE */
